@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie.es</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      /* Todo el header */
+      .header {
+        background: white;
+        padding: 15px 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px;
+        justify-content: center;
+        box-shadow: 10px 3px 13px 0px rgba(0, 0, 0, 0.12);
+      }
+      .image-container h1 {
+        color: palevioletred;
+      }
+      .image-container {
+        display: flex;
+        align-items: center;
+      }
+      .image-container img {
+        width: 50px;
+        height: 50px;
+      }
+      .form {
+        display: grid;
+        grid-template: 30px / 0.8fr;
+        align-self: center;
+      }
+      .form input {
+        border-radius: 3px;
+        border: 1px solid #c9c5c5;
+        padding: 5px;
+        font-size: 15px;
+      }
+      .perfil {
+        display: grid;
+        grid-template: 50px / 130px 50px 30px;
+        justify-content: flex-end;
+      }
+      .perfil p {
+        font-size: 15px;
+        align-self: center;
+        color: grey;
+        font-weight: bold;
+      }
+      .perfil img {
+        align-self: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+      }
+      .botoncito {
+        border: none;
+        background: white;
+        width: 30px;
+        height: 30px;
+        align-self: center;
+      }
+      /* Fin del todo el header (soy el unico que le da risa esto) */
+
+      /* Inicio del Nav vertical */
+      .nav-vertical {
+        position: absolute;
+        background: linear-gradient(to right, #fd545b, #fd6f6b);
+        display: grid;
+        width: 80px;
+        grid-template-rows: 100vh;
+      }
+      .container-nav {
+        display: grid;
+        grid-template-rows: 100px 100px 100px;
+        justify-items: center;
+        color: white;
+        font-weight: bolder;
+      }
+      .container-nav p {
+        text-align: center;
+        font-size: 13px;
+      }
+      .house {
+        margin-top: 5px;
+      }
+      .fire img {
+        margin-left: 10px;
+      }
+      .like img {
+        margin-left: 10px;
+      }
+      .config {
+        align-self: flex-end;
+        margin-bottom: 80px;
+      }
+      .config img {
+        margin-left: 5px;
+      }
+
+      .container-movies {
+        display: grid;
+        grid-template-columns: 400px 400px 400px;
+        
+        /* grid-template: 400px / 500px 500px */
+        justify-content: space-between;
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 100px;
+        margin-right: 20px;
+      }
+      .movie {
+        position: relative;
+        display: block;
+      }
+      .movie-image {
+        margin: 0;
+      }
+      .movie-image img {
+        width: 100%;
+        vertical-align: top;
+        border-radius: 5px;
+      }
+      .movie-overlay {
+        background: rgba(241, 59, 59, 0.4);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      .post-likes{
+        /* width: 80px; */
+        font-size:18px;
+        padding-right: 180px; 
+        margin: 5px;
+        font-weight: bold;
+        /* text-align: center; */
+        display: inline-block;
+      }
+      .title-random {
+        margin-left: 100px;
+        font-size: 20px;
+      }
+      .post-comments{
+        /* width: 80px; */
+        /* padding-right: 80px;  */
+        margin: 5px;
+        /* font-weight: bold; */
+        /* text-align: center; */
+        display: inline-block;
+      }
+
+      /* Fin del Nav Vertical */
+    </style>
+  </head>
+
+  <body>
+    <!-- Inicio del header -->
+    <div class="header">
+      <div class="image-container">
+        <img src="Crispetas.jpg" alt="" />
+        <h1 class="title">Movie.es</h1>
+      </div>
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Busca tu pelicula,actor o director favorito"
+        />
+      </div>
+      <div class="perfil">
+        <p>Bambi Rodriguez</p>
+        <img src="conejo.jpg" alt="" />
+        <button class="botoncito">▼</button>
+      </div>
+    </div>
+    <!-- Fin del header -->
+    <!-- Inicio del nav-vertical -->
+    <div class="nav-vertical">
+      <div class="container-nav">
+        <div class="house">
+          <img src="house-black-silhouette-without-door.png" alt="" />
+          <p>Home</p>
+        </div>
+        <div class="fire">
+          <img src="fire.png" alt="" />
+          <p>Trending</p>
+        </div>
+        <div class="like">
+          <img src="like.png" alt="" />
+          <p>Más likes</p>
+        </div>
+        <div class="config">
+          <img src="settings.png" alt="" />
+          <p>Ajustes</p>
+        </div>
+      </div>
+    </div>
+    <!-- fin del nav vertical -->
+
+    <!-- Inicio del contenido de peliculas -->
+    <h1 class="title-random">Ahora en el Cine</h1>
+    <div class="container-movies">
+      <!-- <h1 class="title-random">Ahora en el Cine</h1> -->
+      <a href="" class="movie">
+        <figure class="movie-image">
+          <img src="macotas.jpeg" alt="" />
+        </figure>
+        <span class="movie-overlay">
+            <p>
+                <span class="post-likes">The Secret Life of Pets</span>
+                <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+            </p>
+      </a>
+      <a href="" class="movie">
+          <figure class="movie-image">
+            <img src="macotas.jpeg" alt="" />
+          </figure>
+          <span class="movie-overlay">
+              <p>
+                  <span class="post-likes">The Secret Life of Pets</span>
+                  <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+              </p>
+        </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+        <a href="" class="movie">
+            <figure class="movie-image">
+              <img src="macotas.jpeg" alt="" />
+            </figure>
+            <span class="movie-overlay">
+                <p>
+                    <span class="post-likes">The Secret Life of Pets</span>
+                    <span class="post-comments">La vida secretas de mis mascotas es todo un misterio sin resolver asi que vamos a descubirlo ohy</span>
+                </p>
+          </a>
+    </div>
+    <!-- Fin del contenido de peliculas -->
+  </body>
+</html>
